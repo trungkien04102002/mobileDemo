@@ -31,7 +31,7 @@ const MenuSide = ( props ) => {
         <View className='flex flex-row justify-between items-center'>
           <View className='flex flex-row items-center gap-x-3'>
             <Image source={logo}></Image>
-            <Text className='text-[#1289F6] font-black text-xl opacity-90 tracking-wide'>High-tech Habitat</Text>
+            <Text className='text-[#1289F6] font-black text-xl opacity-90 tracking-wide'>Runaway</Text>
           </View>
           <Image source={back} className='scale-75 opacity-80'></Image>
         </View>

@@ -10,7 +10,7 @@ import clock from '../img/clock.png'
 
 const Home = () => {
     return (
-        <ScrollView className="flex flex-col h-screen bg-white">
+        <ScrollView className="flex flex-col h-full bg-white">
             
             <View className='pt-8 z-30'>
                     <Header/>

@@ -7,7 +7,7 @@ import studioRoom from '../img/studioRoom.png';
 import homeIcon from '../img/homeicon.png'
 import bookmark from '../img/Bookmark.png'
 
-import styles from '../style'
+import styles from '../style.js'
 
 const notification = [
   {
