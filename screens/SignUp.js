@@ -26,7 +26,7 @@ const SignUp = ({ navigation }) => {
 
     return (
        <View className="flex flex-col bg-white h-full px-4 items-center ">
-            <Image source={login_img} className="mt-16 mb-5"></Image>
+            <Image source={login_img} className="mt-16 mb-16 scale-125"></Image>
             {/* <Text className="text-2xl font-bold">Welcome</Text>
             <Text className="text-lg text-gray-800">By signing in, you are agree our</Text>
             <Text className="text-lg text-blue-400 font-semibold">Term and Conditions</Text> */}
