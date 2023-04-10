@@ -48,7 +48,7 @@ const OnBoard = ({ navigation }) => {
                 }
                 catch(error){}
             }
-            setIsLogin(true)
+            // setIsLogin(true)
 
             }}
             onDone={() => {navigation.navigate('SignIn');; 
@@ -59,7 +59,7 @@ const OnBoard = ({ navigation }) => {
                 }
                 catch(error){}
             }
-            setIsLogin(true)
+            // setIsLogin(true)
             }}
 
             pages={[
