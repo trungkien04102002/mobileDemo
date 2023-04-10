@@ -43,7 +43,7 @@ const App = () => {
 
 
         <Stack.Screen name="Home" component={Home} />
-        {isLogin?<Stack.Screen name="SignIn" component={OnBoard} />:<Stack.Screen name="OnBoard" component={Home} />}
+        {isLogin?<Stack.Screen name="SignIn" component={SignIn} />:<Stack.Screen name="OnBoard" component={OnBoard} />}
         
       </Stack.Navigator>
       </NavigationContainer >

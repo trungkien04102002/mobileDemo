@@ -35,7 +35,7 @@ const docs = [
 
 const OnBoard = ({ navigation }) => {
 
-    
+    const setIsLogin = useContext(AddContext)
     // const onPress = (i) => (index + i > -1) ? setIndex(index => index + i) : index
     return (
         <Onboarding
@@ -48,6 +48,7 @@ const OnBoard = ({ navigation }) => {
                 }
                 catch(error){}
             }
+            setIsLogin(true)
 
             }}
             onDone={() => {navigation.navigate('SignIn');; 
@@ -58,7 +59,7 @@ const OnBoard = ({ navigation }) => {
                 }
                 catch(error){}
             }
-            
+            setIsLogin(true)
             }}
 
             pages={[
