@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+
 import { View, Text, Image, TouchableOpacity, Pressable } from "react-native";
 import Onboarding from 'react-native-onboarding-swiper';
 import styles from '../styles/style'
@@ -6,9 +6,10 @@ import Onboard1 from '../assets/onboard1.png'
 import Onboard2 from '../assets/onboard2.png'
 import Onboard3 from '../assets/onboard3.png'
 import Onboard4 from '../assets/onboard4.png'
+import {useState,createContext,useEffect,useContext} from 'react'
 
 import Home from './home'
-
+import {AddContext} from '../App'
 const docs = [
     {
         image: Onboard1,
@@ -33,50 +34,32 @@ const docs = [
 ]
 
 const OnBoard = ({ navigation }) => {
-    // const [index, setIndex] = useState(0);
+
+    
     // const onPress = (i) => (index + i > -1) ? setIndex(index => index + i) : index
-
     return (
-        // <View
-        //     onTouchStart={e => touchX = e.nativeEvent.pageX}
-        //     onTouchEnd={e => {
-        //         if (touchX - e.nativeEvent.pageX > 40)
-        //             onPress(-1)
-        //     }}
-        //     className="bg-white flex flex-col h-full"
-        // >
-
-        //     <Image style={styles.img} source={docs[index].image} />
-        //     <Text style={styles.title}>{docs[index].title}</Text>
-        //     <Text style={styles.content}>{docs[index].content}</Text>
-
-        //     {index < 3 ?
-        //         <View className="flex flex-row justify-between px-16 pt-8">
-        //             <TouchableOpacity onPress={() =>
-        //                 navigation.navigate('Home')
-        //             }>
-        //                 <Text className="font-semibold text-xl text-gray-800">Skip</Text>
-        //             </TouchableOpacity>
-
-        //             <TouchableOpacity onPress={() => onPress(1)}>
-        //                 <Text className="font-semibold text-xl">Next</Text>
-        //             </TouchableOpacity>
-        //         </View>
-        //         :
-        //         <View style={styles.btn}>
-        //             <TouchableOpacity style={styles.startBtn} onPress={() =>
-        //                 navigation.navigate('Home')
-        //             }>
-        //                 <Text style={styles.startText}>Get Started</Text>
-        //             </TouchableOpacity>
-        //         </View>
-        //     }
-        // </View>
-
         <Onboarding
             bottomBarHeight={80}
-            onSkip={() => navigation.navigate('Home')}
-            onDone={() => navigation.navigate('Home')}
+            onSkip={() => {navigation.navigate('SignIn'); 
+            
+            _storeData = async()=>{
+                try{
+                await AsyncStorage.setItem('isLogin',true)
+                }
+                catch(error){}
+            }
+
+            }}
+            onDone={() => {navigation.navigate('SignIn');; 
+            
+            _storeData = async()=>{
+                try{
+                await AsyncStorage.setItem('isLogin',true)
+                }
+                catch(error){}
+            }
+            
+            }}
 
             pages={[
                 {

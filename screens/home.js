@@ -1,6 +1,5 @@
 import {View, Text, Image, ScrollView, Pressable, TextInput} from 'react-native'
-
-
+import {useState,createContext,useEffect,useContext} from 'react'
 import Header from '../components/header'
 import activity_card from '../img/activity_card.png'
 import yoga from '../img/yoga.png'
@@ -8,7 +7,10 @@ import loveIcon from '../img/icon.png'
 import running from '../img/running.png'
 import clock from '../img/clock.png'
 
+
 const Home = () => {
+    
+
     return (
         <ScrollView className="flex flex-col h-full bg-white">
             
