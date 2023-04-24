@@ -1,4 +1,5 @@
-import {View, Text, Image, ScrollView, Pressable, TextInput} from 'react-native'
+import {View, Text, Image, ScrollView, Pressable, TextInput,Button,TouchableOpacity,StyleSheet} from 'react-native'
+import { Camera, CameraType } from 'expo-camera';
 import {useState,createContext,useEffect,useContext} from 'react'
 import Header from '../components/header'
 import activity_card from '../img/activity_card.png'
@@ -8,15 +9,24 @@ import running from '../img/running.png'
 import clock from '../img/clock.png'
 
 
-const Home = () => {
-    
+const Home = ({ navigation }) => {
+    const [type, setType] = useState(CameraType.back);
+    const [permission, requestPermission] = Camera.useCameraPermissions();
 
+
+    function toggleCameraType() {
+        setType(current => (current === CameraType.back ? CameraType.front : CameraType.back));
+      }
+    
     return (
         <ScrollView className="flex flex-col h-full bg-white">
             
             <View className='pt-8 z-30'>
                     <Header/>
             </View>
+            {/* <Pressable className="bg-yellow-300 items-center p-2 rounded-full" onPress={() => navigation.push('Camera')}>
+                        <Text>Scan QR code</Text>
+            </Pressable> */}
             <View className='px-4'>
                 <Text className='text-2xl pt-4'>Find your</Text>
                 <Text className='text-2xl font-bold'>Friends now!</Text>
@@ -62,10 +72,63 @@ const Home = () => {
                         <Text className='font-bold text-4xl'>9.50</Text>
                         <Text className='font-semibold'>kilometers</Text>
                     </View>
+
+                    {/* <Pressable className='bg-gray-500 rounded-full p-2'>
+                        <Text>Camera</Text>
+                    </Pressable> */}
+                    
+                    {/* <View style={styles.container}>
+                        <View
+                            style={{
+                            flex: 1,
+                            backgroundColor: '#fff',
+                            justifyContent: 'center',
+                            alignItems: 'center'
+                            }}
+                        >
+                            <TouchableOpacity
+                            style={{
+                                width: 130,
+                                borderRadius: 4,
+                                backgroundColor: '#14274e',
+                                flexDirection: 'row',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                height: 40
+                            }}
+                            >
+                            <Text
+                                style={{
+                                color: '#fff',
+                                fontWeight: 'bold',
+                                textAlign: 'center'
+                                }}
+                            >
+                                Take picture
+                            </Text>
+                            </TouchableOpacity>
+                        </View>
+
+                        <StatusBar style="auto" />
+                    </View> */}
+
+
+
                 </View>
+
+               
             </View>
         </ScrollView>
     )
 }
 
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: '#fff',
+      alignItems: 'center',
+      justifyContent: 'center'
+    }
+  })
 export default Home
